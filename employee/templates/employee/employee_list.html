@@ -1,0 +1,37 @@
+{% extends "employee/base.html" %}
+
+{% block content %}
+<form action="" method="GET">
+    {{ form }}
+    <button class="btn btn-primary" type="submit">search</button>
+</form>
+<table class="table table-bordered mt-5">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>email</th>
+            <th>department</th>
+            <th>club</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employee_list %}
+            <tr>
+                <td>{{ employee.pk }}</td>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.department }}</td>
+                <td>
+                    {% for club in employee.club.all %}
+                        {{club}} 
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% include 'employee/pagination.html' %}
+{% endblock %}
