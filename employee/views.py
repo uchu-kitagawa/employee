@@ -28,4 +28,4 @@ class IndexView(generic.ListView):
         if club:
             # サークル名の選択があった場合
             queryset = queryset.filter(club=club)
-        return queryset
+        return queryset.order_by('-created_at')
