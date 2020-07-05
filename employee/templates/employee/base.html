@@ -22,11 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'employee:index' %}">list</a>
                 </li>
-                {% if user.is_superuser%}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'admin:employee_employee_add'%}">employee addition</a>
+                        <a class="nav-link" href="{% url 'admin:employee_employee_add'%}">addition</a>
                     </li>
-                {% endif %}
             </ul>
         </div>
     </nav>
