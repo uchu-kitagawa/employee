@@ -28,6 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '153.127.66.62',
     '127.0.0.1',
+    'uchu.work'
 ]
 
 
